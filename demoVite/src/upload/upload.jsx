@@ -1,5 +1,6 @@
 import React from "react";
 import "./upload.css";
+import { NavLink } from "react-router-dom";
 
 const Upload = () => {
     return (
@@ -19,7 +20,7 @@ const Upload = () => {
             <link rel="icon" href="favicon.ico" />
             {/*  */}
             {/* Use header, main, and footer elements to give semantic structure */}
-            <header
+            {/* <header
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -34,14 +35,13 @@ const Upload = () => {
                         <menu className="dropdown">
                             <button className="dropbtn">Menu</button>
                             <div className="dropdown-content">
-                                <a href="index.html">Home</a>
-                                <a href="upload_station.html">Upload Station</a>
-                                <a href="sign_up.html">Sign Up</a>
+                                <NavLink to="/login/Home">Home </NavLink>
+                                <NavLink to="/upload/upload">Upload</NavLink>
                             </div>
                         </menu>
                     </nav>
                 </div>
-            </header>
+            </header> */}
             <main>
                 <div className="name">
                     <fieldset id="name-controls">

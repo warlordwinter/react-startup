@@ -4,6 +4,12 @@ body {
   min-width: 375px;
 }
 
+nav_main {
+  flex: 0;
+  background: #ddd;
+  margin: 1em;
+}
+
 img {
   max-width: 100%;
   height: auto;
