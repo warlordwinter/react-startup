@@ -1,8 +1,9 @@
 import React from 'react';
-import './App.css';
+import './Home.css';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     // Add your login logic here
@@ -30,7 +31,7 @@ const Home = () => {
       </form>
       <p>
         Don't have an account?
-        {/* <button onClick={() => navigate('/signup')}>Sign Up Here</button> */}
+        <button onClick={() => navigate()}>Sign Up Here</button>
       </p>
     </main>
   );
