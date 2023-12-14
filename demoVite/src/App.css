@@ -14,7 +14,7 @@ header {
   flex: 0 80px;
   background-color: lightcoral;
   color: white;
-  padding: 10px; /* Reduced padding for responsiveness */
+  padding: 5px; /* Reduced padding for responsiveness */
   text-align: center; /* Center text in the header */
 }
 
@@ -102,7 +102,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100px; /* Adjust the height as needed */
+  height: 50px; /* Adjust the height as needed */
   background-color: #F5EDE3;
 }
 
@@ -153,4 +153,16 @@ menu {
   flex-wrap: wrap; /* Add this line */
   list-style: none;
   justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  footer {
+    height: 150px; /* Increase the height for smaller screens */
+    font-size: 18px; /* Increase the font size for better visibility */
+  }
+  .header {
+    flex: 0 60px;
+    font-size: 18px;
+    padding: 5px;
+  }
 }
