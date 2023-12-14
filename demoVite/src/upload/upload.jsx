@@ -18,30 +18,6 @@ const Upload = () => {
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <title>Upload Station</title>
             <link rel="icon" href="favicon.ico" />
-            {/*  */}
-            {/* Use header, main, and footer elements to give semantic structure */}
-            {/* <header
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-start',
-                }}
-            >
-                <div className="hed" width="100%">
-                    <h1 id="usernameHeader" />
-                </div>
-                <div className="main-button">
-                    <nav>
-                        <menu className="dropdown">
-                            <button className="dropbtn">Menu</button>
-                            <div className="dropdown-content">
-                                <NavLink to="/login/Home">Home </NavLink>
-                                <NavLink to="/upload/upload">Upload</NavLink>
-                            </div>
-                        </menu>
-                    </nav>
-                </div>
-            </header> */}
             <main>
                 <div className="name">
                     <fieldset id="name-controls">

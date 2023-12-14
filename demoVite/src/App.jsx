@@ -26,6 +26,7 @@ const App = () => {
                 <div className="dropdown-content">
                   <NavLink to="/login/Home">Home </NavLink>
                   <NavLink to="/upload/upload">Upload Station</NavLink>
+                  <NavLink to="/signup/signup">Sign Up</NavLink>
                 </div>
               </menu>
             </nav>
@@ -36,6 +37,7 @@ const App = () => {
         <Routes>
           <Route path="/login/Home" element={<Home />} />
           <Route path="/upload/upload" element={<Upload />} />
+          <Route path="/signup/signup" element={<Signup />} />
         </Routes>
       </main>
     </BrowserRouter>
