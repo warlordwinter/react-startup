@@ -1,14 +1,13 @@
 import React from "react";
 import "./upload.css";
 import { storePDF, getPDF } from "./upload_station";
+import Chat from "./chat"; // Assuming the Chat component is in the same directory
 
 const Upload = () => {
     const handleStorePDF = () => {
         storePDF();
     };
-    const handleSendMessage = () => {
-        console.log("Send Message");
-    };
+
     const handleGetPDF = () => {
         getPDF();
     };
@@ -29,18 +28,14 @@ const Upload = () => {
             <title>Upload Station</title>
             <link rel="icon" href="favicon.ico" />
             <main>
-                <div className="name">
+                {/* <div className="name">
                     <fieldset id="name-controls">
                         <legend>My Name</legend>
                         <input id="my-name" type="text" />
                     </fieldset>
-                </div>
-                <fieldset id="chat-controls" disabled>
-                    <legend>Chat</legend>
-                    <input id="new-msg" type="text" />
-                    <button onClick={handleSendMessage}>Send</button>
-                </fieldset>
-                <div id="chat-text" />
+                </div> */}
+                {/* Integrate the Chat component here */}
+                <Chat />
                 <div className="File_upload">
                     <br />
                     <h3>Upload My Document</h3>
