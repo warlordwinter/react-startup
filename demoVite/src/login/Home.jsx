@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
-import { useNavigate } from 'react-router-dom';
+
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   // const navigate = useNavigate();
@@ -30,8 +31,7 @@ const Home = () => {
         </button>
       </form>
       <p>
-        Don't have an account?
-        {/* <button onClick={() => navigate()}>Sign Up Here</button> */}
+        Don't have an account? <NavLink to="/signup/signup">Sign Up</NavLink>
       </p>
     </main>
   );
