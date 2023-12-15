@@ -13,7 +13,15 @@ export default defineConfig({
       '/login': {
         target: 'http://localhost:4000',
         changeOrigin: true,
-      }
+      },
+      '/upload-pdf': {
+        target: 'http://localhost:4000',
+        changeOrigin: true,
+      },
+      '/get-pdf': {
+        target: 'http://localhost:4000',
+        changeOrigin: true,
+      },
     }
   }
 })

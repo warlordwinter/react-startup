@@ -1,8 +1,18 @@
 import React from "react";
 import "./upload.css";
-import { NavLink } from "react-router-dom";
+import { storePDF, getPDF } from "./upload_station";
 
 const Upload = () => {
+    const handleStorePDF = () => {
+        storePDF();
+    };
+    const handleSendMessage = () => {
+        console.log("Send Message");
+    };
+    const handleGetPDF = () => {
+        getPDF();
+    };
+
     return (
         <div>
             {/* FILEPATH: /c:/Users/18019/OneDrive/Desktop/CS_260/my_start_up/startup/HTML_code/upload_station.html */}
@@ -28,20 +38,20 @@ const Upload = () => {
                 <fieldset id="chat-controls" disabled>
                     <legend>Chat</legend>
                     <input id="new-msg" type="text" />
-                    <button onclick="sendMessage()">Send</button>
+                    <button onClick={handleSendMessage}>Send</button>
                 </fieldset>
                 <div id="chat-text" />
                 <div className="File_upload">
                     <br />
                     <h3>Upload My Document</h3>
                     <input type="file" id="pdf-file-input" accept=".pdf" />
-                    <button onclick="storePDF()">Store PDF</button>
+                    <button onClick={handleStorePDF}>Store PDF</button>
                 </div>
                 <div className="Display_PDF">
                     <br />
                     <h3>Display PDF</h3>
                     <input type="text" id="pdf-file-name" placeholder="Enter PDF name" />
-                    <button onclick="getPDF()">Get PDF</button>
+                    <button onClick={handleGetPDF}>Get PDF</button>
                     <div id="pdf-viewer" />
                 </div>
             </main>
