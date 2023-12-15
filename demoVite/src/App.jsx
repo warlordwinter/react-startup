@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Home from "./login/Home";
 import Upload from "./upload/upload";
-import { BrowserRouter, NavLink, Routes, Route } from "react-router-dom";
+import { BrowserRouter, NavLink, Routes, Route} from "react-router-dom";
 import Signup from './signup/signup';
 
 const App = () => {
@@ -36,6 +36,7 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/index.html" element={<Home />} />
           <Route path="/login/Home" element={<Home />} />
           <Route path="/upload/upload" element={<Upload />} />
           <Route path="/signup/signup" element={<Signup />} />
