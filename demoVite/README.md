@@ -1,8 +1,135 @@
-# React + Vite
+# PDF simplifier
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Elevator Pitch
+Have you ever had a super long PDF or document that you didn't want to read? What if I told you that there was a website that would read a PDF and make it easier for you to understand by providing an AI assistant for you to ask questions? This amazing tool is called *pdfsimplifer.click* and it was made for you.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Design
+Here is my front-end design for my project. A back-end design will be added later.
+
+![Mock](images/1.jpg)
+![Mock](images/2.jpg)
+![Mock](images/3.jpg)
+![Mock](images/4.jpg)
+
+### Key Features
+
+- Secure login over HTTPS
+
+- Ability for the user to upload their own PDFS
+
+- Ability for the User to download their simplified PDF.
+
+- An AI chat box is provided for the user to ask questions.
+
+- Past PDFs of the user are stored in their account.
+
+### Technologies
+I will utilize the technologies in the following ways.
+
+-**HTML** HTML Structure is showcased through the structure of the webpage. There will be three web pages. This includes creating the layout for the PDF viewer, user dashboard, and AI chatbox. One page will be used for the introduction page. Another page will be for the User's Dashboard. The last page will be for the Login.
+
+-**CSS** Application's styling is used in chatboxs, screen headers, PDF displayers, and dynamic colors. 
+
+**JavaScript** Provides login capability, button connections, and collection of text box information. It will also be used to implement the AI chatbox, handle PDF uploads, and make the user experience smoother.
+
+**Service**
+    - Login Endpoints
+    - Manage User's data.
+    - Retrieving the previous PDFs
+    - Storing and submitting PDFs
+
+**DB** Will be used to store the User's PDFs and login data.
+
+**Login** Registers and logins the user. User credentials are stored in the database.
+
+**WebSocket** The web socket will be used for real-time communication with the AI assistant.
+
+**React** React will help build the PDF viewer, the user dashboard, and the AI chatbox.
+
+
+## HTML Deliverable
+
+-**HTML Pages**: There are three main HTML pages. One for the Login and Landing page. One page to sign up and register. The last page is dedicated to the PDF station, chatbot, and user interface.
+-**Links**: On the top of each page there are multiple links to help the user navigate to the next page. Furthermore, on the Login page if the user hits the login button they are navigated to the upload_station portal.
+-**Text**: Much of the AI Chat box is represented by a textual description.
+-**3rd party**: The ChatBox will call an API in the chatbox area. Plus, the User's interface of PDF's will store all of the PDF's through a 3rd party system.
+-**Images**: On the Login page there is a basic login picture.
+-**Login**: There are login and submit buttons for the user to sign up or login.
+-**Database**: The users PDF's are pulled from the database. 
+-**Websocket**: The AI chatbox will need to be connected to the Web so that it can respond in real time.
+
+## CSS Deliverable
+For this deliverable I properly styled the application into its final appearance.
+
+- **Header, footer, and main content body** - All of the headers, footers, and content bodies are custmized to the page they impact.
+- **Navigation elements** - I made a dropdown menu to help ease navigation.
+- **Responsive to window resizing** - My app looks great on all window sizes and devices.
+- **Application elements** - Used good contrast of colors and shadow uses.
+- **Application text content** - Consistent fonts and reoccuring color uses suggests great organization.
+- **Application images** - I made my image larger usings CSS.
+
+## JavaScript deliverable
+
+For this deliverable, I made the Login, Sign-Up,Station Page Work.
+
+- **login** - When you press the login button on the sign-up or login page it will display the user's name on the upload station page.
+- **database** - User's name is stored in the local storage and is displayed on the upload station page.
+- **WebSocket** - The User is able to send a message to the Chat bot on the page and then have it send back an answer. *Note this feature is only suppose to send back an error has occured because I'm planning on connecting the actual response in a later deliverable.* 
+- **application logic** - The application has data validation feature which when a user inputs their name into the login that they will be able personalize their documentation page to display the users name. There will also hopefully, be a database intergration in the future for this. Furthermore, the pdf upload will only work if there is pdf. Anything else will not work or display.
+
+## Service deliverable
+
+For this deliverable I added backend endpoints that catch login and signup information
+
+- **Node.js/Express HTTP service** - The Endpoints are looking great for loin and signup. 
+- **Static middleware for frontend** - Check my index.js to see this in action. Mostly login, signup, and send-message.
+    **Here is how I have been testing my points** 
+    -curl -X POST -H "Content-Type: application/json" -d '{"username":"John","password":"password"}' http://localhost:4000/login
+    -**This will only work for me because of the token** curl -X POST -H "Content-Type: application/json" -d '{"message":"Hello, bot!"}' http://localhost:4000/send-message
+    -curl -X POST -H "Content-Type: application/json" -d '{"username":"Alice","password":"mypassword"}' http://localhost:4000/signup
+- **Calls to third party endpoints** - I'm calling some from OPEN AI but it cost's money to test them. I'm saving this part for later until I can set up a method to not cost me any money.
+- **Backend service endpoints** - I'm storing the login info in a dictionary until the MONGO portion.
+- **Frontend calls service endpoints** - I did this using the fetch function. You can see the corasponding JS files.
+
+|URL|HTTP Method| Purpose | Data type Stored|
+|---|-----------|--------------------|------------|
+|`/login`| POST | Holds the login info| str |
+|`/signup`| POST | Holds the signup info| str |
+|`/send-message`|POST| calls the third party endpoint| str|
+|`/get-pdf:/:fileName`| GET | Retrieves the PDF from DB| arrayBuffer |
+|`/upload-pdf`| POST | Stores PDF in MONGOS | arrayBuffer |
+
+## DB Deliverable
+
+- **MongoDB Atlas database created** - done!
+- **Endpoints for data** - My endpoints now process the PDF's and Login and Signup Data
+- **Stores data in MongoDB** - done!
+- **Retrieves Data in Mongos** - done! Make sure you spell the Filename correctly.
+
+## Login Deliverable
+- **User registration** - Creates a new account in the database.
+- **existing user** - Check's if the user is in the database and will alert you if there is already a user with the same username as you.
+- **Use MongoDB to store credentials** - Stores the PDF files that the user uploads
+- **Restricts functionality** - You cannot access the PDF database without logging in. If you leave the Upload Station HTML page you will be forced to log back in.
+
+## WebSocket deliverable
+
+For this deliverable I used webSocket have a live chat option so people could talk about documents over the web.
+
+- **Backend listens for WebSocket connection** - Done!
+- **Frontend makes WebSocket connection** - Completed!
+- **Data sent over WebSocket connection** - Works!
+- **WebSocket data displayed** - The user is able to chat with others over the chat.
+
+## React deliverable
+
+For this deliverable I converted the application over to use Vue. I know it is supposed to use React, but the instructor said I could use Vue because I already have extensive experience with React.
+
+- **Bundled and transpiled** - done!
+- **Components** - Login, Signup, upload, chat are done
+- **Router** - Routing between login, signup, and upload are done.
+- **Hooks** - I use the useState and the useEffect hooks to change my chat components.
+
+$ ./deployService.sh -k wjw37.pem -h pdfsimplifer.click -s startup
+
