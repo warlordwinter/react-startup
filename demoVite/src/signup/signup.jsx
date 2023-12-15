@@ -1,4 +1,5 @@
 import React from "react";
+import { signUP } from "./signupfunction";
 
 const Signup = () => {
     return (
@@ -35,7 +36,7 @@ const Signup = () => {
                             required
                         />
                     </div>
-                    <button className="btn btn-primary" onClick="signUP()">
+                    <button className="btn btn-primary" onClick={signUP}>
                         Sign Up
                     </button>
                 </div>
