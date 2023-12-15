@@ -1,15 +1,11 @@
 import React from 'react';
 import './Home.css';
-
 import { NavLink } from 'react-router-dom';
+import { login } from './login';
+
 
 const Home = () => {
   // const navigate = useNavigate();
-
-  const handleLogin = () => {
-    // Add your login logic here
-    console.log('Login button clicked');
-  };
 
   return (
     <main>
@@ -26,7 +22,7 @@ const Home = () => {
             <input type="password" id="password" placeholder="Your Password here" required />
           </div>
         </div>
-        <button className="btn btn-primary" onClick={handleLogin}>
+        <button className="btn btn-primary" onClick={login}>
           Login
         </button>
       </form>
