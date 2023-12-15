@@ -34,7 +34,7 @@ export function signUP() {
             localStorage.setItem('username', username);
 
             // Redirect to another page
-            window.location.href = 'upload_station.html';
+            window.location.href = '/upload/upload';
         })
         .catch((error) => {
             // Handle errors, including the case when the username is already in use (status code 409)
